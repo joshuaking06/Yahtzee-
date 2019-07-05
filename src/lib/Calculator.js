@@ -11,7 +11,24 @@ class Calculator {
 
 	static threeOfAKind(arr) {
 		const hasThree = arr.some((num) => this.counter(arr, num) > 2)
-		return hasThree
+		if (hasThree) return arr.reduce((sum, acc) => sum + acc, 0)
+		return 0
+	}
+
+	static fourOfAKind(arr) {
+		const hasFour = arr.some((num) => this.counter(arr, num) > 3)
+		if (hasFour) return arr.reduce((sum, acc) => sum + acc, 0)
+		return 0
+	}
+
+	static yahtzee(arr) {
+		const hasFive = arr.some((num) => this.counter(arr, num) > 4)
+		if (hasFive) return arr.reduce((sum, acc) => sum + acc, 0)
+		return 0
+	}
+
+	static chance(arr) {
+		return arr.reduce((sum, acc) => sum + acc, 0)
 	}
 }
 
