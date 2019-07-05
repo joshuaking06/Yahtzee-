@@ -5,8 +5,7 @@ class Calculator {
 	}
 
 	static counter(arr, num) {
-		const numOfOccurences = arr.filter((diceNum) => diceNum === num).length
-		return numOfOccurences
+		return arr.filter((diceNum) => diceNum === num).length
 	}
 
 	static threeOfAKind(arr) {
@@ -29,9 +28,22 @@ class Calculator {
 
 	static fullHouse(arr) {
 		const hasFullHouse = arr.every((num) => this.counter(arr, num) > 1)
-		// if (hasFive) return arr.reduce((sum, acc) => sum + acc, 0)
 		if (hasFullHouse) return 25
 		return 0
+	}
+
+	static largeStraight(arr) {
+		const nonDups = [ ...new Set(arr) ].sort()
+		if (nonDups.length < 5) return 0
+		const total = nonDups.reduce((sum, acc) => sum + acc, 0)
+		if (total === 15 || total === 20) return 40
+		return 0
+	}
+
+	static smallStraight(arr) {
+		const nonDups = [ ...new Set(arr) ].sort()
+		if (nonDups.length < 4) return 0
+		return nonDups
 	}
 
 	static chance(arr) {
