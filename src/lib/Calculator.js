@@ -27,6 +27,13 @@ class Calculator {
 		return 0
 	}
 
+	static fullHouse(arr) {
+		const hasFullHouse = arr.every((num) => this.counter(arr, num) > 1)
+		// if (hasFive) return arr.reduce((sum, acc) => sum + acc, 0)
+		if (hasFullHouse) return 25
+		return 0
+	}
+
 	static chance(arr) {
 		return arr.reduce((sum, acc) => sum + acc, 0)
 	}
