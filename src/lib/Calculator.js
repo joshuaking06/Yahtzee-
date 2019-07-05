@@ -33,17 +33,25 @@ class Calculator {
 	}
 
 	static largeStraight(arr) {
-		const nonDups = [ ...new Set(arr) ].sort()
-		if (nonDups.length < 5) return 0
-		const total = nonDups.reduce((sum, acc) => sum + acc, 0)
-		if (total === 15 || total === 20) return 40
+		let consecutives = [ '12345', '23456' ]
+		const nonDupsStr = [ ...new Set(arr) ].sort().join('')
+		let isStraight
+		consecutives.forEach((str) => {
+			if (nonDupsStr.includes(str)) isStraight = true
+		})
+		if (isStraight) return 40
 		return 0
 	}
 
 	static smallStraight(arr) {
-		const nonDups = [ ...new Set(arr) ].sort()
-		if (nonDups.length < 4) return 0
-		return nonDups
+		let consecutives = [ '1234', '2345', '3456' ]
+		const nonDupsStr = [ ...new Set(arr) ].sort().join('')
+		let isStraight
+		consecutives.forEach((str) => {
+			if (nonDupsStr.includes(str)) isStraight = true
+		})
+		if (isStraight) return 30
+		return 0
 	}
 
 	static chance(arr) {
