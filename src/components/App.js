@@ -1,8 +1,9 @@
 import React from 'react'
 import Calculator from '../lib/Calculator'
 
-const diceNums = [ 5, 5, 5, 6, 5 ]
-// console.log(Calculator.calcTopNum(1, diceNums))
+const diceNums = [ 5, 1, 5, 6, 5 ]
+// console.log(Calculator.calcTopNum(6, diceNums))
+console.log(Calculator.threeOfAKind(diceNums))
 
 const App = () => {
 	return (
