@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import { S_IXGRP } from 'constants'
 
 const DiceBox = ({ dice, setDice }) => {
-	console.log(dice)
-
 	const rollDice = () => {
 		const newDice = dice.map((die) => {
 			if (die.inPlay === false) return die
