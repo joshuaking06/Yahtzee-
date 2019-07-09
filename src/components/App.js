@@ -15,22 +15,27 @@ console.log(Calculator.smallStraight(dice), 'small straight')
 const App = () => {
 	const [ dice, setDice ] = useState([
 		{
+			id: 1,
 			num: 0,
 			inPlay: true
 		},
 		{
+			id: 2,
 			num: 0,
 			inPlay: true
 		},
 		{
+			id: 3,
 			num: 0,
 			inPlay: true
 		},
 		{
+			id: 4,
 			num: 0,
 			inPlay: true
 		},
 		{
+			id: 5,
 			num: 0,
 			inPlay: true
 		}
