@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const DiceBox = ({ dice, setDice, turnInfo, setTurnInfo }) => {
 	const rollDice = () => {
