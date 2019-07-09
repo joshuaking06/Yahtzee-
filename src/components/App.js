@@ -4,8 +4,8 @@ import DiceBox from './DiceBox'
 import Scoreboard from './ScoreBoard'
 import { newDice, newScores } from '../lib/data'
 
-const testDice = [ 5, 3, 3, 3, 5 ]
-console.log(newScores[8].getScore(testDice), newScores[8].name)
+// const testDice = [ 5, 3, 3, 3, 5 ]
+// console.log(newScores[8].getScore(testDice), newScores[8].name)
 
 const App = () => {
 	const [ dice, setDice ] = useState(newDice)
@@ -13,18 +13,14 @@ const App = () => {
 		timesRolled: 0,
 		player: 'Player 1'
 	})
-	const [ player1Scores, setPlayer1Scores ] = useState([])
+	const [ player1Scores, setPlayer1Scores ] = useState(newScores)
+	const [ player2Scores, setPlayer2Scores ] = useState(newScores)
 
 	return (
 		<div className="container">
 			<h1>Yahtzee</h1>
 			<DiceBox dice={dice} setDice={setDice} turnInfo={turnInfo} setTurnInfo={setTurnInfo} />
-			<Scoreboard
-				dice={dice}
-				turnInfo={turnInfo}
-				setDice={setDice}
-				setTurnInfo={setTurnInfo}
-			/>
+			<Scoreboard dice={dice} turnInfo={turnInfo} scores={player1Scores} />
 		</div>
 	)
 }

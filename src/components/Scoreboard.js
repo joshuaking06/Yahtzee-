@@ -1,19 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const dice = [ 5, 1, 3, 4, 6 ]
-// console.log(Calculator.calcTopNum(5, dice), 'topNumSection')
-// console.log(Calculator.threeOfAKind(dice), 'threeofakind')
-// console.log(Calculator.fourOfAKind(dice), 'fourofakind')
-// console.log(Calculator.yahtzee(dice), 'yahtzee')
-// console.log(Calculator.chance(dice), 'chance')
-// console.log(Calculator.fullHouse(dice), 'fullHouse')
-// console.log(Calculator.largeStraight(dice), 'large straight')
-// console.log(Calculator.smallStraight(dice), 'small straight')
-
-const Scoreboard = ({ setDice, setTurnInfo, dice, turnInfo }) => {
+const Scoreboard = ({ dice, turnInfo, scores }) => {
+	const diceNums = dice.map((diceObj) => diceObj.num)
 	return (
 		<div>
 			<h1>scoreboard</h1>
+			{scores.map((score) => (
+				<p key={score.name}>
+					{score.name} <span>{score.getScore(diceNums)}</span>
+				</p>
+			))}
 		</div>
 	)
 }
