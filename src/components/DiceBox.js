@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 const DiceBox = ({ dice, setDice, turnInfo, setTurnInfo }) => {
-	console.log(dice)
-
 	const rollDice = () => {
 		const newDice = dice.map((die) => {
 			if (die.inPlay === false) return die
@@ -31,7 +29,7 @@ const DiceBox = ({ dice, setDice, turnInfo, setTurnInfo }) => {
 			)}
 			{dice.map((die) => (
 				<div key={die.id} className="box">
-					{die.num}
+					<h4 className="title is-4">{die.num}</h4>
 					{die.inPlay &&
 					turnInfo.timesRolled < 3 && (
 						<button id={die.id} className="button is-info" onClick={keepDice}>
