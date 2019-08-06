@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import { newDice } from '../lib/data'
 
-const Scoreboard = ({ dice, turnInfo, setTurnInfo, scores, setScore }) => {
+const Scoreboard = ({ dice, turnInfo, setTurnInfo, scores, setScore, setDice }) => {
 	const diceNums = dice.map((diceObj) => diceObj.num)
 	const saveScores = (name) => {
 		const newScores = scores.map((score) => {
 			if (score.name === name) return { ...score, score: score.getScore(diceNums) }
 			return score
 		})
+		setDice(newDice)
 		setTurnInfo({ ...turnInfo, timesRolled: 0 })
 		return setScore(newScores)
 	}
@@ -19,7 +21,7 @@ const Scoreboard = ({ dice, turnInfo, setTurnInfo, scores, setScore }) => {
 					{!score.score && <span>{score.getScore(diceNums)}</span>}
 					{!score.score && (
 						<button
-							className="button is-primary"
+							className="button is-primary is-small"
 							onClick={() => saveScores(score.name)}
 						>
 							Confirm

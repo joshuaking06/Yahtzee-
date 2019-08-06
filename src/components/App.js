@@ -26,6 +26,7 @@ const App = () => {
 				scores={player1Scores}
 				setScore={setPlayer1Scores}
 				setTurnInfo={setTurnInfo}
+				setDice={setDice}
 			/>
 		</div>
 	)
