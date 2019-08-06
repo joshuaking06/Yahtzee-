@@ -20,7 +20,13 @@ const App = () => {
 		<div className="container">
 			<h1>Yahtzee</h1>
 			<DiceBox dice={dice} setDice={setDice} turnInfo={turnInfo} setTurnInfo={setTurnInfo} />
-			<Scoreboard dice={dice} turnInfo={turnInfo} scores={player1Scores} />
+			<Scoreboard
+				dice={dice}
+				turnInfo={turnInfo}
+				scores={player1Scores}
+				setScore={setPlayer1Scores}
+				setTurnInfo={setTurnInfo}
+			/>
 		</div>
 	)
 }
