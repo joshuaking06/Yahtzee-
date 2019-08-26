@@ -20,8 +20,8 @@ const App = () => {
 			<Scoreboard
 				dice={dice}
 				turnInfo={turnInfo}
-				scores={player1Scores}
-				setScore={setPlayer1Scores}
+				scores={turnInfo.player === 'Player 1' ? player1Scores : player2Scores}
+				setScore={turnInfo.player === 'Player 1' ? setPlayer1Scores : setPlayer2Scores}
 				setTurnInfo={setTurnInfo}
 				setDice={setDice}
 			/>

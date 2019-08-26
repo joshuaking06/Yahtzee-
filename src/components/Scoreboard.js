@@ -9,7 +9,8 @@ const Scoreboard = ({ dice, turnInfo, setTurnInfo, scores, setScore, setDice }) 
 			return score
 		})
 		setDice(newDice)
-		setTurnInfo({ ...turnInfo, timesRolled: 0 })
+		const nextPlayer = turnInfo.player === 'Player 1' ? 'Player 2' : 'Player 1'
+		setTurnInfo({ player: nextPlayer, timesRolled: 0 })
 		return setScore(newScores)
 	}
 	return (
