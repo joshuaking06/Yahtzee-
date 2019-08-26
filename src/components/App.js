@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Calculator from '../lib/Calculator'
 import DiceBox from './DiceBox'
 import Scoreboard from './ScoreBoard'
 import { newDice, newScores } from '../lib/data'
