@@ -4,9 +4,6 @@ import DiceBox from './DiceBox'
 import Scoreboard from './ScoreBoard'
 import { newDice, newScores } from '../lib/data'
 
-// const testDice = [ 5, 3, 3, 3, 5 ]
-// console.log(newScores[8].getScore(testDice), newScores[8].name)
-
 const App = () => {
 	const [ dice, setDice ] = useState(newDice)
 	const [ turnInfo, setTurnInfo ] = useState({

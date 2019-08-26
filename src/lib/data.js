@@ -92,6 +92,11 @@ const newScores = [
 		score: undefined,
 		getScore: Calculator.yahtzee,
 		counter: Calculator.counter
+	},
+	{
+		name: 'Chance',
+		score: undefined,
+		getScore: Calculator.chance
 	}
 ]
 
